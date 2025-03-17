@@ -6,6 +6,11 @@ function Layout() {
     <div className="min-h-screen flex flex-col">
       <header className="relative container mx-auto px-4 pt-8 pb-2 max-w-5xl">
         <Link to="/" className="flex items-center gap-2 w-max">
+          <img
+            src="/favicon.png"
+            alt="Replyke ForumHub"
+            className="w-8 h-8 rounded-sm overflow-clip"
+          />
           <span className="text-xl font-bold">Replyke ForumHub</span>
         </Link>
       </header>

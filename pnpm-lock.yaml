@@ -28,16 +28,16 @@ importers:
         version: 1.1.2(@types/react@19.0.10)(react@19.0.0)
       '@replyke/comments-social-react-js':
         specifier: ^4.0.11
-        version: 4.0.11(@replyke/core@4.0.15)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        version: 4.0.11(@replyke/core@4.0.16)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@replyke/core':
-        specifier: ^4.0.15
-        version: 4.0.15
+        specifier: ^4.0.16
+        version: 4.0.16
       '@replyke/react-js':
-        specifier: ^4.0.15
-        version: 4.0.15
+        specifier: ^4.0.16
+        version: 4.0.16
       '@replyke/ui-core-react-js':
         specifier: ^4.0.6
-        version: 4.0.6(@replyke/core@4.0.15)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        version: 4.0.6(@replyke/core@4.0.16)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@tailwindcss/vite':
         specifier: ^4.0.9
         version: 4.0.14(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2))
@@ -840,11 +840,11 @@ packages:
       react: '>=18.0.0 <20.0.0'
       react-dom: '>=18.0.0 <20.0.0'
 
-  '@replyke/core@4.0.15':
-    resolution: {integrity: sha512-5rretjkUgjR+x8LCw/VMbS/BrZr/4W8nymsWv2Fq/Ts1+htvHfNKM+yjn1DvbeemI7Jv9vWeeQSl/8E5ulpM9w==}
+  '@replyke/core@4.0.16':
+    resolution: {integrity: sha512-9qB0ziLvuziB/lajFwcikrRFGcuS9KIckYrNvljFTX42cO0H7qaZjnN3xQB+25Dv5JjgPbxPagT5UvZGv5yDfg==}
 
-  '@replyke/react-js@4.0.15':
-    resolution: {integrity: sha512-m7vDQtZ2iIfDm67SLWo4dHpJRIZIL6gIK26bUHvV7mfsOb7qBu0u0BW5e94hZIj1g4IOHsDyy7QX7wbgvKmSLw==}
+  '@replyke/react-js@4.0.16':
+    resolution: {integrity: sha512-T/R8Wp3KTG0YbEp7KIQ/9WWm5k5ioNu34st6xt11EWggW/I/eL2NH9o5oeV52+MvcuK2Sj0W/TUPSo2NSo2z6w==}
 
   '@replyke/ui-core-react-js@4.0.6':
     resolution: {integrity: sha512-vkRbPsE28LZDznkuY5W8BSNCbysdm/vpqBmGoM/Jjq+HNqvrhwyImQs1BGj9bsqSZxO0Q56u33iYYjXBiDL8IA==}
@@ -2794,24 +2794,24 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
-  '@replyke/comments-social-core@4.0.6(@replyke/core@4.0.15)(react@19.0.0)':
+  '@replyke/comments-social-core@4.0.6(@replyke/core@4.0.16)(react@19.0.0)':
     dependencies:
-      '@replyke/core': 4.0.15
+      '@replyke/core': 4.0.16
       '@replyke/ui-core': 4.0.5
       react: 19.0.0
 
-  '@replyke/comments-social-react-js@4.0.11(@replyke/core@4.0.15)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+  '@replyke/comments-social-react-js@4.0.11(@replyke/core@4.0.16)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
-      '@replyke/comments-social-core': 4.0.6(@replyke/core@4.0.15)(react@19.0.0)
-      '@replyke/core': 4.0.15
-      '@replyke/ui-core-react-js': 4.0.6(@replyke/core@4.0.15)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+      '@replyke/comments-social-core': 4.0.6(@replyke/core@4.0.16)(react@19.0.0)
+      '@replyke/core': 4.0.16
+      '@replyke/ui-core-react-js': 4.0.6(@replyke/core@4.0.16)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     transitivePeerDependencies:
       - moment
       - styled-components
 
-  '@replyke/core@4.0.15':
+  '@replyke/core@4.0.16':
     dependencies:
       axios: 1.8.3
       js-cookie: 3.0.5
@@ -2820,17 +2820,17 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@replyke/react-js@4.0.15':
+  '@replyke/react-js@4.0.16':
     dependencies:
-      '@replyke/core': 4.0.15
+      '@replyke/core': 4.0.16
     transitivePeerDependencies:
       - debug
 
-  '@replyke/ui-core-react-js@4.0.6(@replyke/core@4.0.15)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+  '@replyke/ui-core-react-js@4.0.6(@replyke/core@4.0.16)(moment@2.30.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
       '@giphy/js-fetch-api': 5.6.0
       '@giphy/react-components': 10.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@replyke/core': 4.0.15
+      '@replyke/core': 4.0.16
       moment: 2.30.1
     transitivePeerDependencies:
       - react

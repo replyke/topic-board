@@ -20,9 +20,12 @@ function InnerTopicPage() {
         closeModal={() => setIsNewPostModalOpen(false)}
       />
 
-      <h1 className="text-3xl font-bold">
-        {topics.find((topic) => topic.id === topicId)?.title}
-      </h1>
+      <div className="flex items-center gap-2">
+        <h1 className="text-3xl font-bold">
+          {topics.find((topic) => topic.id === topicId)?.title}
+        </h1>
+      </div>
+
       {/* Actions Bar */}
       <ActionsBar openNewPostModal={() => setIsNewPostModalOpen(true)} />
 

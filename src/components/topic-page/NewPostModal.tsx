@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -21,7 +19,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { useFeed } from "@replyke/react-js";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { topics } from "../../mock-data";
 import { LoaderCircleIcon } from "lucide-react";
 
@@ -33,6 +31,7 @@ function NewPostModal({
   closeModal: () => void;
 }) {
   const { topicId } = useParams();
+  const navigate = useNavigate();
   const { createEntity } = useFeed();
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostContent, setNewPostContent] = useState("");
@@ -52,7 +51,7 @@ function NewPostModal({
     }
 
     setSubmitting(true);
-    await createEntity?.({
+    const newEntity = await createEntity?.({
       resource: "forum",
       title: newPostTitle,
       content: newPostContent,
@@ -61,6 +60,10 @@ function NewPostModal({
         topicId,
       },
     });
+
+    if (newEntity) {
+      navigate(`/post/${newEntity.shortId}`);
+    }
 
     // Reset form and close modal
     closeModal();

@@ -1,5 +1,3 @@
-"use client";
-
 import { ChevronDown, Filter, Plus, SortAsc } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
