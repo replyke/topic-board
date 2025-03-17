@@ -5,7 +5,7 @@ import { PostRow } from "../components/topic-page/PostRow";
 import ActionsBar from "../components/topic-page/ActionsBar";
 import NewPostModal from "../components/topic-page/NewPostModal";
 import { useParams } from "react-router-dom";
-import { topics } from "../mock-data";
+import { topics } from "../constants/topics";
 
 function InnerTopicPage() {
   const { topicId } = useParams();

@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { topics } from "../mock-data";
+import { topics } from "../constants/topics";
 
 function HomePage() {
   // State for active category filter and sort method

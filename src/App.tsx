@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const handleSignJwt = async () => {
-      const payload = users[0];
+      const payload = users[1];
 
       const token = await signTestingJwt({
         projectId: import.meta.env.VITE_PUBLIC_REPLYKE_PROJECT_ID!,

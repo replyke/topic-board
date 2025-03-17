@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import { NotificationsControl } from "./shared/NotificationsControl";
 
 function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="relative container mx-auto px-4 pt-8 pb-2 max-w-5xl">
+      <header className="relative container flex justify-between mx-auto px-4 pt-8 pb-2 max-w-5xl">
         <Link to="/" className="flex items-center gap-2 w-max">
           <img
             src="/favicon.png"
@@ -13,6 +14,7 @@ function Layout() {
           />
           <span className="text-xl font-bold">Replyke ForumHub</span>
         </Link>
+        <NotificationsControl />
       </header>
       <main className="mt-6 container px-4 mx-auto max-w-5xl flex-1">
         <Outlet />

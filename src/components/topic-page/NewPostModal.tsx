@@ -20,8 +20,8 @@ import {
 import { useState } from "react";
 import { useFeed } from "@replyke/react-js";
 import { useNavigate, useParams } from "react-router-dom";
-import { topics } from "../../mock-data";
 import { LoaderCircleIcon } from "lucide-react";
+import { topics } from "../../constants/topics";
 
 function NewPostModal({
   isOpen,
