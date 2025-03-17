@@ -21,6 +21,9 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { useFeed } from "@replyke/react-js";
+import { useParams } from "react-router-dom";
+import { topics } from "../../mock-data";
+import { LoaderCircleIcon } from "lucide-react";
 
 function NewPostModal({
   isOpen,
@@ -29,23 +32,34 @@ function NewPostModal({
   isOpen: boolean;
   closeModal: () => void;
 }) {
+  const { topicId } = useParams();
   const { createEntity } = useFeed();
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostContent, setNewPostContent] = useState("");
   const [newPostTag, setNewPostTag] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleCreatePost = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!topicId) {
+      throw new Error("Couldn't find topic ID");
+    }
 
     // Validate form
     if (!newPostTitle.trim() || !newPostContent.trim() || !newPostTag) {
       return;
     }
 
+    setSubmitting(true);
     await createEntity?.({
+      resource: "forum",
       title: newPostTitle,
       content: newPostContent,
       keywords: [newPostTag],
+      metadata: {
+        topicId,
+      },
     });
 
     // Reset form and close modal
@@ -53,7 +67,11 @@ function NewPostModal({
     setNewPostTitle("");
     setNewPostContent("");
     setNewPostTag("");
+    setSubmitting(false);
   };
+
+  const submittingEnabled =
+    newPostTitle.trim() && newPostContent.trim() && newPostTag.trim();
 
   return (
     <Dialog
@@ -99,13 +117,13 @@ function NewPostModal({
                   <SelectValue placeholder="Select a tag" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="React">React</SelectItem>
-                  <SelectItem value="Next.js">Next.js</SelectItem>
-                  <SelectItem value="CSS">CSS</SelectItem>
-                  <SelectItem value="Security">Security</SelectItem>
-                  <SelectItem value="TypeScript">TypeScript</SelectItem>
-                  <SelectItem value="JavaScript">JavaScript</SelectItem>
-                  <SelectItem value="UI/UX">UI/UX</SelectItem>
+                  {topics
+                    .find((topic) => topic.id === topicId)
+                    ?.tags.map((t) => (
+                      <SelectItem value={t} key={t}>
+                        {t}
+                      </SelectItem>
+                    ))}
                 </SelectContent>
               </Select>
             </div>
@@ -114,7 +132,12 @@ function NewPostModal({
             <Button type="button" variant="outline" onClick={closeModal}>
               Cancel
             </Button>
-            <Button type="submit">Post</Button>
+            <Button type="submit" disabled={submitting || !submittingEnabled}>
+              {submitting && (
+                <LoaderCircleIcon className="size-4 mr-2 animate-spin" />
+              )}
+              {submitting ? "Posting..." : "Post"}
+            </Button>
           </DialogFooter>
         </form>
       </DialogContent>

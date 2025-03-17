@@ -9,5 +9,5 @@ TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
 export function getTimeAgo(date: Date) {
-  return timeAgo.format(date);
+  return timeAgo.format(date, "mini");
 }

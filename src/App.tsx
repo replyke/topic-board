@@ -4,15 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 
 import PostPage from "./pages/post/[id]";
-import HomePage from "./pages/HomePage";
+import TopicPage from "./pages/TopicPage";
 import Layout from "./components/Layout";
 
-const users = [
-  { id: "user1", username: "lionel_messi10" },
-  { id: "user2", username: "diego_maradona" },
-  { id: "user3", username: "pele" },
-  { id: "user4", username: "ronaldo" },
-];
+import { users } from "./mock-data";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const signTestingJwt = useSignTestingJwt();
@@ -45,7 +41,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/post/:id" element={<PostPage />} />
+            <Route path="/topics/:topicId" element={<TopicPage />} />
+            <Route path="/post/:postId" element={<PostPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

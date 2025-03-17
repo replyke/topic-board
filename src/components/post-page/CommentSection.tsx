@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   SocialStyleCallbacks,
@@ -9,7 +10,6 @@ import {
 import { toast } from "sonner";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useEntity } from "@replyke/react-js";
-import { useMemo } from "react";
 
 function CommentSection() {
   const [searchParams] = useSearchParams();

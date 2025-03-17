@@ -13,7 +13,7 @@ import { useFeed } from "@replyke/react-js";
 function ActionsBar({ openNewPostModal }: { openNewPostModal: () => void }) {
   const { sortBy, setSortBy, timeFrame, setTimeFrame } = useFeed();
   return (
-    <div className="flex flex-col sm:flex-row gap-3 mb-6 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+    <div className="flex flex-col sm:flex-row gap-3 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
       <div className="flex items-center gap-2">
         <SortAsc className="h-4 w-4" />
         <span className="text-sm font-medium">Sort:</span>
