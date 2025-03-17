@@ -1,4 +1,14 @@
 import { Topic } from "../types/topic";
+import {
+  MessageSquare,
+  Cpu,
+  Gamepad2,
+  Film,
+  Music,
+  Trophy,
+  Atom,
+  Palette,
+} from "lucide-react";
 
 // Sample forum topics data
 export const topics: Topic[] = [
@@ -8,7 +18,7 @@ export const topics: Topic[] = [
     description: "Talk about anything and everything",
     category: "general",
     tags: ["chat", "random", "off-topic"],
-    icon: "MessageSquare",
+    icon: MessageSquare,
   },
   {
     id: "technology",
@@ -16,7 +26,7 @@ export const topics: Topic[] = [
     description: "Discuss the latest tech news and gadgets",
     category: "tech",
     tags: ["gadgets", "programming", "AI", "software"],
-    icon: "Cpu",
+    icon: Cpu,
   },
   {
     id: "gaming",
@@ -24,7 +34,7 @@ export const topics: Topic[] = [
     description: "Video games, board games, and more",
     category: "gaming",
     tags: ["PC", "console", "RPG", "multiplayer"],
-    icon: "Gamepad2",
+    icon: Gamepad2,
   },
   {
     id: "movies-tv",
@@ -32,7 +42,7 @@ export const topics: Topic[] = [
     description: "Discuss your favorite shows and films",
     category: "entertainment",
     tags: ["cinema", "streaming", "Netflix", "Hollywood"],
-    icon: "Film",
+    icon: Film,
   },
   {
     id: "music",
@@ -40,7 +50,7 @@ export const topics: Topic[] = [
     description: "Share and discuss your favorite tunes",
     category: "entertainment",
     tags: ["rock", "pop", "hip-hop", "indie"],
-    icon: "Music",
+    icon: Music,
   },
   {
     id: "sports",
@@ -48,7 +58,7 @@ export const topics: Topic[] = [
     description: "All things sports related",
     category: "sports",
     tags: ["football", "basketball", "F1", "tennis"],
-    icon: "Trophy",
+    icon: Trophy,
   },
   {
     id: "science",
@@ -56,7 +66,7 @@ export const topics: Topic[] = [
     description: "Scientific discoveries and discussions",
     category: "science",
     tags: ["space", "biology", "physics", "medicine"],
-    icon: "Atom",
+    icon: Atom,
   },
   {
     id: "art-design",
@@ -64,6 +74,6 @@ export const topics: Topic[] = [
     description: "Share your creations and get feedback",
     category: "creative",
     tags: ["graphic design", "illustration", "painting", "photography"],
-    icon: "Palette",
+    icon: Palette,
   },
 ];

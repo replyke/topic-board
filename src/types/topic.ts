@@ -1,3 +1,6 @@
+import { LucideProps } from "lucide-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
+
 // Define Topic Interface
 export interface Topic {
   id: string;
@@ -5,5 +8,7 @@ export interface Topic {
   description: string;
   category: string;
   tags: string[];
-  icon: string;
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
 }
