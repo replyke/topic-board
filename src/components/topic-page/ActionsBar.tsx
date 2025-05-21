@@ -6,10 +6,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useFeed } from "@replyke/react-js";
+import { useEntityList } from "@replyke/react-js";
 
 function ActionsBar({ openNewPostModal }: { openNewPostModal: () => void }) {
-  const { sortBy, setSortBy, timeFrame, setTimeFrame } = useFeed();
+  const { sortBy, setSortBy, timeFrame, setTimeFrame } = useEntityList();
   return (
     <div className="flex flex-col sm:flex-row gap-3 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
       <div className="flex items-center gap-2">

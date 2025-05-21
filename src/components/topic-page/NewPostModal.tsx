@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
-import { useFeed } from "@replyke/react-js";
+import { useEntityList } from "@replyke/react-js";
 import { useNavigate, useParams } from "react-router-dom";
 import { LoaderCircleIcon } from "lucide-react";
 import { topics } from "../../constants/topics";
@@ -32,7 +32,7 @@ function NewPostModal({
 }) {
   const { topicId } = useParams();
   const navigate = useNavigate();
-  const { createEntity } = useFeed();
+  const { createEntity } = useEntityList();
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostContent, setNewPostContent] = useState("");
   const [newPostTag, setNewPostTag] = useState("");
@@ -52,7 +52,7 @@ function NewPostModal({
 
     setSubmitting(true);
     const newEntity = await createEntity?.({
-      resource: "forum",
+      sourceId: "forum",
       title: newPostTitle,
       content: newPostContent,
       keywords: [newPostTag],

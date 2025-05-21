@@ -5,7 +5,7 @@ import {
   ReportReasonKey,
   reportReasons,
   useUser,
-  useSubmitReport,
+  useCreateReport,
   useEntity,
 } from "@replyke/react-js";
 import {
@@ -26,7 +26,7 @@ const ReportPostSheet = ({
 }) => {
   const { user } = useUser();
   const { entity } = useEntity();
-  const { submitEntityReport } = useSubmitReport();
+  const { createEntityReport } = useCreateReport();
 
   const [submitting, setSubmitting] = useState(false);
   const [reason, setReason] = useState<ReportReasonKey | null>(null);
@@ -43,7 +43,7 @@ const ReportPostSheet = ({
       }
 
       setSubmitting(true);
-      await submitEntityReport({ targetId: entity.id, reason });
+      await createEntityReport({ targetId: entity.id, reason });
       setShowReportPostDialog(false);
       setReason(null);
       toast.success("Report submitted successfully");

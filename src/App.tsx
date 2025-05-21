@@ -11,6 +11,8 @@ import { users } from "./mock-data";
 import HomePage from "./pages/HomePage";
 
 function App() {
+
+  // TODO: HIS IS FOR TESTING AND DEVELOPMENT PURPOSES ONLY. IN PRODUCTION ALWAY SIGN JWT ON THE SERVER
   const signTestingJwt = useSignTestingJwt();
 
   const [signedToken, setSignedToken] = useState<string>();

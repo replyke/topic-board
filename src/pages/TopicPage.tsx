@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { EntityProvider, FeedProvider, useFeed } from "@replyke/react-js";
+import {
+  EntityProvider,
+  EntityListProvider,
+  useEntityList,
+} from "@replyke/react-js";
 import { LoaderCircleIcon } from "lucide-react";
 import { PostRow } from "../components/topic-page/PostRow";
 import ActionsBar from "../components/topic-page/ActionsBar";
@@ -9,7 +13,7 @@ import { topics } from "../constants/topics";
 
 function InnerTopicPage() {
   const { topicId } = useParams();
-  const { entities, resetting } = useFeed();
+  const { entities, resetting } = useEntityList();
 
   const [isNewPostModalOpen, setIsNewPostModalOpen] = useState(false);
 
@@ -53,8 +57,8 @@ export default function TopicPage() {
   const { topicId } = useParams();
 
   return (
-    <FeedProvider
-      resource="forum"
+    <EntityListProvider
+      sourceId="forum"
       metadataFilters={{
         includes: {
           topicId,
@@ -62,6 +66,6 @@ export default function TopicPage() {
       }}
     >
       <InnerTopicPage />
-    </FeedProvider>
+    </EntityListProvider>
   );
 }
